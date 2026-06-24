@@ -1,0 +1,11 @@
+site_name: Amazon and Pinecone Documentation
+
+nav:
+  - Home: index.md
+  - TestScale: 01-Test Scale.md
+  - Concepts: 02-Concepts.md
+  - Architecture: 03-Architecture.md
+
+theme:
+  name: material
+  
