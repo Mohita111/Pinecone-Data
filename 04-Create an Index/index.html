@@ -1,0 +1,1829 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+    
+    
+      
+        <title>04 Create an Index - Amazon and Pinecone Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentation-index" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Amazon and Pinecone Documentation" class="md-header__button md-logo" aria-label="Amazon and Pinecone Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Amazon and Pinecone Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              04 Create an Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Amazon and Pinecone Documentation" class="md-nav__button md-logo" aria-label="Amazon and Pinecone Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Amazon and Pinecone Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-Test%20Scale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TestScale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-Concepts.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-Create anIndex.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an index
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-index-for-full-text-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an index for full-text search
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an index for full-text search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-bm25-on-a-single-text-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimal: BM25 on a single text field
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-index-for-dense-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an index for dense vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an index for dense vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integrated-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrated embedding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bring-your-own-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bring your own vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-index-for-sparse-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an index for sparse vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an index for sparse vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integrated-embedding_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrated embedding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bring-your-own-vectors_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bring your own vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-index-from-a-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an index from a backup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata indexing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-metadata-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set metadata indexing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-metadata-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check metadata indexing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Index options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud regions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Similarity metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedding models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Embedding models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multilingual-e5-large" class="md-nav__link">
+    <span class="md-ellipsis">
+      multilingual-e5-large
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llama-text-embed-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      llama-text-embed-v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinecone-sparse-english-v0" class="md-nav__link">
+    <span class="md-ellipsis">
+      pinecone-sparse-english-v0
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<blockquote>
+<h2 id="documentation-index">Documentation Index</h2>
+<p>Fetch the complete documentation index at: https://docs.pinecone.io/llms.txt
+Use this file to discover all available pages before exploring further.</p>
+</blockquote>
+<h1 id="create-an-index">Create an index</h1>
+<blockquote>
+<p>Create indexes for full-text, semantic, lexical, and hybrid search.</p>
+</blockquote>
+<script type="application/ld+json">
+  {`
+    [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Pinecone Documentation",
+      "url": "https://docs.pinecone.io",
+      "description": "Official documentation for Pinecone, the vector database for AI applications.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pinecone",
+        "url": "https://www.pinecone.io"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://docs.pinecone.io/search?query={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Pinecone",
+      "url": "https://www.pinecone.io",
+      "logo": "https://www.pinecone.io/images/docs_og_image_v2.png",
+      "description": "Pinecone is the vector database built for AI. Search through billions of items for similar matches to any object, in milliseconds.",
+      "sameAs": [
+        "https://x.com/pinecone",
+        "https://www.linkedin.com/company/pinecone-io",
+        "https://github.com/pinecone-io"
+      ],
+      "knowsAbout": [
+        "Vector databases",
+        "Semantic search",
+        "AI infrastructure",
+        "Machine learning"
+      ]
+    }
+    ]
+    `}
+</script>
+
+<p>A Pinecone index can hold any combination of the following:</p>
+<ul>
+<li>
+<p><strong>Documents</strong> are the unit of data in an index with a document schema — JSON records whose ranking fields are indexed according to a schema you declare at index creation. An index with a document schema can mix <code>dense_vector</code>, <code>sparse_vector</code>, and FTS-enabled <code>string</code> ranking fields in the same record, alongside any number of metadata fields (auto-indexed at upsert time). Use documents for <a href="/guides/search/full-text-search">full-text search</a> (BM25 ranking on <code>string</code> fields with <code>full_text_search</code> enabled), and to combine multiple scoring methods on the same data via <code>score_by</code>.</p>
+</li>
+<li>
+<p><strong>Dense vectors</strong> are numerical representations of the meaning and relationships of text, images, or other data. Indexes of dense vectors are used for <a href="/guides/search/semantic-search">semantic search</a>, or together with sparse vectors for <a href="/guides/search/hybrid-search">hybrid search</a>.</p>
+</li>
+<li>
+<p><strong>Sparse vectors</strong> are high-dimensional vectors with mostly zero values, produced by a sparse embedding model such as <a href="/models/pinecone-sparse-english-v0"><code>pinecone-sparse-english-v0</code></a>. Indexes of sparse vectors are used for <a href="/guides/search/lexical-search">sparse-vector lexical search</a>, or together with dense vectors for <a href="/guides/search/hybrid-search">hybrid search</a>.</p>
+</li>
+</ul>
+<p><Tip>
+  You can create an index using the <a href="https://app.pinecone.io/organizations/-/projects/-/create-index/serverless">Pinecone console</a>.
+</Tip></p>
+<h2 id="create-an-index-for-full-text-search">Create an index for full-text search</h2>
+<p>An index with a document schema stores typed JSON documents. The schema declares how each ranking field is indexed: as a <code>string</code> field with <code>full_text_search</code> enabled for BM25 ranking, a <code>dense_vector</code> for ANN similarity, or a <code>sparse_vector</code>. A single index can mix all three ranking field types; at query time, pick the ranking signal with <code>score_by</code>. Metadata fields (anything else you upsert) are not declared in the schema — they're auto-indexed for filtering at upsert time.</p>
+<p><Note>
+  Full-text search is not integrated embedding. A <code>string</code> field with <code>full_text_search</code> is indexed for BM25 ranking and Lucene queries. It does not call an embedding model. Integrated embedding remains available for vector API indexes.
+</Note></p>
+<p>Indexes with document schemas are in <a href="/guides/search/full-text-search#public-preview">public preview</a> and use API version <code>2026-01.alpha</code>. The preview supports REST and the Python SDK; for other languages, call the REST endpoint directly.</p>
+<h3 id="minimal-bm25-on-a-single-text-field">Minimal: BM25 on a single text field</h3>
+<p>The example below creates an <code>articles</code> index whose <code>body</code> field is indexed for BM25 ranking. Other fields included at upsert time are stored on each document and auto-indexed for filtering as metadata.</p>
+<p>```bash curl theme={null}
+curl -X POST "https://api.pinecone.io/indexes" \
+  -H "Api-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "X-Pinecone-Api-Version: 2026-01.alpha" \
+  -d '{
+    "name": "articles",
+    "deployment": {
+      "deployment_type": "managed",
+      "cloud": "aws",
+      "region": "us-east-1"
+    },
+    "schema": {
+      "fields": {
+        "body": {
+          "type": "string",
+          "full_text_search": {}
+        }
+      }
+    }
+  }'</p>
+<pre><code>
+### Multi-field schema: BM25 + dense vector
+
+A single index with a document schema can hold FTS-enabled `string` and `dense_vector` ranking fields together (the same schema can also include a `sparse_vector` field). A single search request ranks by one scoring type — multi-field BM25 is supported (multiple `text` clauses on different fields, or one `query_string` clause spanning fields), and any scoring method can be combined with metadata filters, including text-match filters (`$match_phrase`, `$match_all`, `$match_any`) on FTS-enabled `string` fields.
+
+```bash curl theme={null}
+curl -X POST &quot;https://api.pinecone.io/indexes&quot; \
+  -H &quot;Api-Key: YOUR_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-Pinecone-Api-Version: 2026-01.alpha&quot; \
+  -d '{
+    &quot;name&quot;: &quot;articles-multi&quot;,
+    &quot;deployment&quot;: {
+      &quot;deployment_type&quot;: &quot;managed&quot;,
+      &quot;cloud&quot;: &quot;aws&quot;,
+      &quot;region&quot;: &quot;us-east-1&quot;
+    },
+    &quot;schema&quot;: {
+      &quot;fields&quot;: {
+        &quot;title&quot;:    { &quot;type&quot;: &quot;string&quot;, &quot;full_text_search&quot;: {} },
+        &quot;body&quot;:     { &quot;type&quot;: &quot;string&quot;, &quot;full_text_search&quot;: {} },
+        &quot;embedding&quot;:{ &quot;type&quot;: &quot;dense_vector&quot;, &quot;dimension&quot;: 1536, &quot;metric&quot;: &quot;cosine&quot; }
+      }
+    }
+  }'
+</code></pre>
+<p>You can include additional fields (for example, <code>category</code> or <code>year</code>) at upsert time. All metadata fields are automatically indexed for filtering — they don't need to be declared in the schema. The schema is for ranking fields only; declaring a metadata-only field (<code>string</code> without <code>full_text_search</code>, <code>string_list</code>, <code>float</code>, or <code>boolean</code>) is rejected at index creation.</p>
+<p>For the full schema reference (all field types, language and analyzer options, dedicated read capacity, and Python SDK examples), see <a href="/guides/search/full-text-search">Full-text search</a>.</p>
+<p><Warning>
+  Schema migration is not yet supported. Once an index with a document schema is created, you cannot add, remove, or modify fields. Plan your schema carefully — if you need to change a schema, <a href="/guides/manage-data/manage-indexes#delete-an-index">delete the index</a> and create a new one.
+</Warning></p>
+<h2 id="create-an-index-for-dense-vectors">Create an index for dense vectors</h2>
+<p>You can create an index that stores dense vectors with <a href="/guides/index-data/indexing-overview#integrated-embedding">integrated vector embedding</a>, or one that stores vectors generated with an external embedding model.</p>
+<h3 id="integrated-embedding">Integrated embedding</h3>
+<p><Note>
+  Indexes with integrated embedding do not support <a href="/guides/manage-data/update-data">updating</a> or <a href="/guides/index-data/import-data">importing</a> with text.
+</Note></p>
+<p>If you want to upsert and search with source text and have Pinecone convert it to dense vectors automatically, <a href="/reference/api/latest/control-plane/create_for_model">create an index with integrated embedding</a> as follows:</p>
+<ul>
+<li>Provide a <code>name</code> for the index.</li>
+<li>Set <code>cloud</code> and <code>region</code> to the <a href="/guides/index-data/create-an-index#cloud-regions">cloud and region</a> where the index should be deployed.</li>
+<li>Set <code>embed.model</code> to one of <a href="/guides/index-data/create-an-index#embedding-models">Pinecone's hosted embedding models</a>.</li>
+<li>Set <code>embed.field_map</code> to the name of the field in your source document that contains the data for embedding.</li>
+</ul>
+<p>Other parameters are optional. See the <a href="/reference/api/latest/control-plane/create_for_model">API reference</a> for details.</p>
+<p><CodeGroup>
+  ```python Python theme={null}
+  from pinecone import Pinecone</p>
+<p>pc = Pinecone(api_key="YOUR_API_KEY")</p>
+<p>index_name = "integrated-dense-py"</p>
+<p>if not pc.has_index(index_name):
+      pc.create_index_for_model(
+          name=index_name,
+          cloud="aws",
+          region="us-east-1",
+          embed={
+              "model":"llama-text-embed-v2",
+              "field_map":{"text": "chunk_text"}
+          }
+      )
+  ```</p>
+<p>```javascript JavaScript theme={null}
+  import { Pinecone } from '@pinecone-database/pinecone'</p>
+<p>const pc = new Pinecone({ apiKey: 'YOUR_API_KEY' });</p>
+<p>await pc.createIndexForModel({
+    name: 'integrated-dense-js',
+    cloud: 'aws',
+    region: 'us-east-1',
+    embed: {
+      model: 'llama-text-embed-v2',
+      fieldMap: { text: 'chunk_text' },
+    },
+    waitUntilReady: true,
+  });
+  ```</p>
+<p>```java Java theme={null}
+  import io.pinecone.clients.Pinecone;
+  import org.openapitools.db_control.client.ApiException;
+  import org.openapitools.db_control.client.model.CreateIndexForModelRequest;
+  import org.openapitools.db_control.client.model.CreateIndexForModelRequestEmbed;
+  import org.openapitools.db_control.client.model.DeletionProtection;
+  import java.util.HashMap;
+  import java.util.Map;</p>
+<p>public class CreateIntegratedIndex {
+      public static void main(String[] args) throws ApiException {
+          Pinecone pc = new Pinecone.Builder("YOUR_API_KEY").build();
+          String indexName = "integrated-dense-java";
+          String region = "us-east-1";
+          HashMap<String, String> fieldMap = new HashMap&lt;&gt;();
+          fieldMap.put("text", "chunk_text");
+          CreateIndexForModelRequestEmbed embed = new CreateIndexForModelRequestEmbed()
+                  .model("llama-text-embed-v2")
+                  .fieldMap(fieldMap);
+          Map<String, String> tags = new HashMap&lt;&gt;();
+          tags.put("environment", "development");
+          pc.createIndexForModel(
+                  indexName,
+                  CreateIndexForModelRequest.CloudEnum.AWS,
+                  region,
+                  embed,
+                  DeletionProtection.DISABLED,
+                  tags
+          );
+      }
+  }
+  ```</p>
+<p>```go Go theme={null}
+  package main</p>
+<p>import (
+      "context"
+      "fmt"
+      "log"</p>
+<pre><code>  "github.com/pinecone-io/go-pinecone/v4/pinecone"
+</code></pre>
+<p>)</p>
+<p>func main() {
+      ctx := context.Background()</p>
+<pre><code>  pc, err := pinecone.NewClient(pinecone.NewClientParams{
+      ApiKey: "YOUR_API_KEY",
+  })
+  if err != nil {
+      log.Fatalf("Failed to create Client: %v", err)
+  }
+
+    indexName := "integrated-dense-go"
+    deletionProtection := pinecone.DeletionProtectionDisabled
+
+  idx, err := pc.CreateIndexForModel(ctx, &amp;pinecone.CreateIndexForModelRequest{
+    Name:   indexName,
+    Cloud:  pinecone.Aws,
+    Region: "us-east-1",
+    Embed: pinecone.CreateIndexForModelEmbed{
+        Model:    "llama-text-embed-v2",
+        FieldMap: map[string]interface{}{"text": "chunk_text"},
+    },
+      DeletionProtection: &amp;deletionProtection,
+      Tags:   &amp;pinecone.IndexTags{ "environment": "development" },
+})
+  if err != nil {
+      log.Fatalf("Failed to create serverless integrated index: %v", idx.Name)
+  } else {
+      fmt.Printf("Successfully created serverless integrated index: %v", idx.Name)
+  }
+</code></pre>
+<p>}
+  ```</p>
+<p>```csharp C# theme={null}
+  using Pinecone;</p>
+<p>var pinecone = new PineconeClient("YOUR_API_KEY");</p>
+<p>var createIndexRequest = await pinecone.CreateIndexForModelAsync(
+      new CreateIndexForModelRequest
+      {
+          Name = "integrated-dense-dotnet",
+          Cloud = CreateIndexForModelRequestCloud.Aws,
+          Region = "us-east-1",
+          Embed = new CreateIndexForModelRequestEmbed
+          {
+              Model = "llama-text-embed-v2",
+              FieldMap = new Dictionary<string, object?>() 
+              { 
+                  { "text", "chunk_text" } 
+              }
+          },
+          DeletionProtection = DeletionProtection.Disabled,
+          Tags = new Dictionary<string, string> 
+          { 
+              { "environment", "development" }
+          }
+      }
+  );
+  ```</p>
+<p>```json curl theme={null}
+  PINECONE_API_KEY="YOUR_API_KEY"</p>
+<p>curl -X POST "https://api.pinecone.io/indexes/create-for-model" \
+       -H "Content-Type: application/json" \
+       -H "Api-Key: $PINECONE_API_KEY" \
+       -H "X-Pinecone-Api-Version: 2025-10" \
+       -d '{
+             "name": "integrated-dense-curl",
+             "cloud": "aws",
+             "region": "us-east-1",
+             "embed": {
+               "model": "llama-text-embed-v2",
+               "field_map": {
+                 "text": "chunk_text"
+               }
+             }
+           }'
+  ```</p>
+<p><code>bash CLI theme={null}
+  # Target the project where you want to create the index.
+  pc target -o "example-org" -p "example-project"
+  # Create the index.
+  pc index create \
+    --name "integrated-dense-cli" \
+    --metric "cosine" \
+    --cloud "aws" \
+    --region "us-east-1" \
+    --model "llama-text-embed-v2" \
+    --field_map "text=chunk_text" \
+    --tags "environment=development"</code>
+</CodeGroup></p>
+<h3 id="bring-your-own-vectors">Bring your own vectors</h3>
+<p>If you use an external embedding model to convert your data to dense vectors, <a href="/reference/api/latest/control-plane/create_index">create an index</a> as follows:</p>
+<ul>
+<li>Provide a <code>name</code> for the index.</li>
+<li>Set the <code>vector_type</code> to <code>dense</code>.</li>
+<li>Specify the <code>dimension</code> and similarity <code>metric</code> of the vectors you'll store in the index. This should match the dimension and metric supported by your embedding model.</li>
+<li>Set <code>spec.cloud</code> and <code>spec.region</code> to the <a href="/guides/index-data/create-an-index#cloud-regions">cloud and region</a> where the index should be deployed. For Python, you also need to import the <code>ServerlessSpec</code> class.</li>
+</ul>
+<p>Other parameters are optional. See the <a href="/reference/api/latest/control-plane/create_index">API reference</a> for details.</p>
+<p><CodeGroup>
+  ```python Python theme={null}
+  from pinecone.grpc import PineconeGRPC as Pinecone
+  from pinecone import ServerlessSpec</p>
+<p>pc = Pinecone(api_key="YOUR_API_KEY")</p>
+<p>index_name = "standard-dense-py"</p>
+<p>if not pc.has_index(index_name):
+      pc.create_index(
+          name=index_name,
+          vector_type="dense",
+          dimension=1536,
+          metric="cosine",
+          spec=ServerlessSpec(
+              cloud="aws",
+              region="us-east-1"
+          ),
+          deletion_protection="disabled",
+          tags={
+              "environment": "development"
+          }
+      )
+  ```</p>
+<p>```javascript JavaScript theme={null}
+  import { Pinecone } from '@pinecone-database/pinecone'</p>
+<p>const pc = new Pinecone({ apiKey: 'YOUR_API_KEY' });</p>
+<p>await pc.createIndex({
+    name: 'standard-dense-js',
+    vectorType: 'dense',
+    dimension: 1536,
+    metric: 'cosine',
+    spec: {
+      serverless: {
+        cloud: 'aws',
+        region: 'us-east-1'
+      }
+    },
+    deletionProtection: 'disabled',
+    tags: { environment: 'development' }, 
+  });
+  ```</p>
+<p>```java Java theme={null}
+  import io.pinecone.clients.Pinecone;
+  import org.openapitools.db_control.client.model.IndexModel;
+  import org.openapitools.db_control.client.model.DeletionProtection;
+  import java.util.HashMap;</p>
+<p>public class CreateServerlessIndexExample {
+      public static void main(String[] args) {
+          Pinecone pc = new Pinecone.Builder("YOUR_API_KEY").build();
+          String indexName = "standard-dense-java";
+          String cloud = "aws";
+          String region = "us-east-1";
+          String vectorType = "dense";
+          Map<String, String> tags = new HashMap&lt;&gt;();
+          tags.put("environment", "development");
+          pc.createServerlessIndex(
+              indexName,
+              "cosine", 
+              1536, 
+              cloud,
+              region,
+              DeletionProtection.DISABLED, 
+              tags, 
+              vectorType
+          );
+      }
+  }
+  ```</p>
+<p>```go Go theme={null}
+  package main</p>
+<p>import (
+      "context"
+      "fmt"
+      "log"</p>
+<pre><code>  "github.com/pinecone-io/go-pinecone/v4/pinecone"
+</code></pre>
+<p>)</p>
+<p>func main() {
+      ctx := context.Background()</p>
+<pre><code>  pc, err := pinecone.NewClient(pinecone.NewClientParams{
+      ApiKey: "YOUR_API_KEY",
+  })
+  if err != nil {
+      log.Fatalf("Failed to create Client: %v", err)
+  }
+
+  // Serverless index
+    indexName := "standard-dense-go"
+vectorType := "dense"
+  dimension := int32(1536)
+  metric := pinecone.Cosine
+deletionProtection := pinecone.DeletionProtectionDisabled
+
+  idx, err := pc.CreateServerlessIndex(ctx, &amp;pinecone.CreateServerlessIndexRequest{
+      Name:               indexName,
+      VectorType:         &amp;vectorType,
+      Dimension:          &amp;dimension,
+      Metric:             &amp;metric,
+      Cloud:              pinecone.Aws,
+      Region:             "us-east-1",
+      DeletionProtection: &amp;deletionProtection,
+      Tags:               &amp;pinecone.IndexTags{ "environment": "development" },
+  })
+  if err != nil {
+      log.Fatalf("Failed to create serverless index: %v", err)
+  } else {
+      fmt.Printf("Successfully created serverless index: %v", idx.Name)
+  }
+</code></pre>
+<p>}
+  ```</p>
+<p>```csharp C# theme={null}
+  using Pinecone;</p>
+<p>var pinecone = new PineconeClient("YOUR_API_KEY");</p>
+<p>var createIndexRequest = await pinecone.CreateIndexAsync(new CreateIndexRequest
+  {
+      Name = "standard-dense-dotnet",
+      VectorType = VectorType.Dense,
+      Dimension = 1536,
+      Metric = MetricType.Cosine,
+      Spec = new ServerlessIndexSpec
+      {
+          Serverless = new ServerlessSpec
+          {
+              Cloud = ServerlessSpecCloud.Aws,
+              Region = "us-east-1"
+          }
+      },
+      DeletionProtection = DeletionProtection.Disabled,
+      Tags = new Dictionary<string, string> 
+      {<br />
+          { "environment", "development" }
+      }
+  });
+  ```</p>
+<p>```shell curl theme={null}
+  PINECONE_API_KEY="YOUR_API_KEY"</p>
+<p>curl -X POST "https://api.pinecone.io/indexes" \
+       -H "Accept: application/json" \
+       -H "Content-Type: application/json" \
+       -H "Api-Key: $PINECONE_API_KEY" \
+       -H "X-Pinecone-Api-Version: 2025-10" \
+       -d '{
+             "name": "standard-dense-curl",
+             "vector_type": "dense",
+             "dimension": 1536,
+             "metric": "cosine",
+             "spec": {
+               "serverless": {
+                 "cloud": "aws",
+                 "region": "us-east-1"
+                }
+              },
+              "tags": {
+                "environment": "development"
+              },
+              "deletion_protection": "disabled"
+           }'
+  ```</p>
+<p><code>bash CLI theme={null}
+  # Target the project where you want to create the index.
+  pc target -o "example-org" -p "example-project"
+  # Create the index.
+  pc index create \
+    --name "standard-dense-cli" \
+    --vector_type "dense" \
+    --dimension 1536 \
+    --metric "cosine" \
+    --cloud "aws" \
+    --region "us-east-1" \
+    --tags "environment=development" \
+    --deletion_protection "disabled"</code>
+</CodeGroup></p>
+<h2 id="create-an-index-for-sparse-vectors">Create an index for sparse vectors</h2>
+<p>You can create an index that stores sparse vectors with <a href="/guides/index-data/indexing-overview#integrated-embedding">integrated vector embedding</a>, or one that stores vectors generated with an external embedding model.</p>
+<h3 id="integrated-embedding_1">Integrated embedding</h3>
+<p>If you want to upsert and search with source text and have Pinecone convert it to sparse vectors automatically, <a href="/reference/api/latest/control-plane/create_for_model">create an index with integrated embedding</a> as follows:</p>
+<ul>
+<li>Provide a <code>name</code> for the index.</li>
+<li>Set <code>cloud</code> and <code>region</code> to the <a href="/guides/index-data/create-an-index#cloud-regions">cloud and region</a> where the index should be deployed.</li>
+<li>Set <code>embed.model</code> to one of <a href="/guides/index-data/create-an-index#embedding-models">Pinecone's hosted sparse embedding models</a>.</li>
+<li>Set <code>embed.field_map</code> to the name of the field in your source document that contains the text for embedding.</li>
+<li>If needed, <code>embed.read_parameters</code> and <code>embed.write_parameters</code> can be used to override the default model embedding behavior.</li>
+</ul>
+<p>Other parameters are optional. See the <a href="/reference/api/latest/control-plane/create_for_model">API reference</a> for details.</p>
+<p><CodeGroup>
+  ```python Python theme={null}
+  from pinecone import Pinecone</p>
+<p>pc = Pinecone(api_key="YOUR_API_KEY")</p>
+<p>index_name = "integrated-sparse-py"</p>
+<p>if not pc.has_index(index_name):
+      pc.create_index_for_model(
+          name=index_name,
+          cloud="aws",
+          region="us-east-1",
+          embed={
+              "model":"pinecone-sparse-english-v0",
+              "field_map":{"text": "chunk_text"}
+          }
+      )
+  ```</p>
+<p>```javascript JavaScript theme={null}
+  import { Pinecone } from '@pinecone-database/pinecone'</p>
+<p>const pc = new Pinecone({ apiKey: 'YOUR_API_KEY' });</p>
+<p>await pc.createIndexForModel({
+    name: 'integrated-sparse-js',
+    cloud: 'aws',
+    region: 'us-east-1',
+    embed: {
+      model: 'pinecone-sparse-english-v0',
+      fieldMap: { text: 'chunk_text' },
+    },
+    waitUntilReady: true,
+  });
+  ```</p>
+<p>```java Java theme={null}
+  import io.pinecone.clients.Pinecone;
+  import org.openapitools.db_control.client.ApiException;
+  import org.openapitools.db_control.client.model.CreateIndexForModelRequest;
+  import org.openapitools.db_control.client.model.CreateIndexForModelRequestEmbed;
+  import org.openapitools.db_control.client.model.DeletionProtection;
+  import java.util.HashMap;
+  import java.util.Map;</p>
+<p>public class CreateIntegratedIndex {
+      public static void main(String[] args) throws ApiException {
+          Pinecone pc = new Pinecone.Builder("YOUR_API_KEY").build();
+          String indexName = "integrated-sparse-java";
+          String region = "us-east-1";
+          HashMap<String, String> fieldMap = new HashMap&lt;&gt;();
+          fieldMap.put("text", "chunk_text");
+          CreateIndexForModelRequestEmbed embed = new CreateIndexForModelRequestEmbed()
+                  .model("pinecone-sparse-english-v0")
+                  .fieldMap(fieldMap);
+          Map<String, String> tags = new HashMap&lt;&gt;();
+          tags.put("environment", "development");
+          pc.createIndexForModel(
+                  indexName,
+                  CreateIndexForModelRequest.CloudEnum.AWS,
+                  region,
+                  embed,
+                  DeletionProtection.DISABLED,
+                  tags
+          );
+      }
+  }
+  ```</p>
+<p>```go Go theme={null}
+  package main</p>
+<p>import (
+      "context"
+      "fmt"
+      "log"</p>
+<pre><code>  "github.com/pinecone-io/go-pinecone/v4/pinecone"
+</code></pre>
+<p>)</p>
+<p>func main() {
+      ctx := context.Background()</p>
+<pre><code>  pc, err := pinecone.NewClient(pinecone.NewClientParams{
+      ApiKey: "YOUR_API_KEY",
+  })
+  if err != nil {
+      log.Fatalf("Failed to create Client: %v", err)
+  }
+
+    indexName := "integrated-sparse-go"
+deletionProtection := pinecone.DeletionProtectionDisabled
+
+  idx, err := pc.CreateIndexForModel(ctx, &amp;pinecone.CreateIndexForModelRequest{
+    Name:   indexName,
+    Cloud:  pinecone.Aws,
+    Region: "us-east-1",
+    Embed: pinecone.CreateIndexForModelEmbed{
+        Model:    "pinecone-sparse-english-v0",
+        FieldMap: map[string]interface{}{"text": "chunk_text"},
+    },
+      DeletionProtection: &amp;deletionProtection,
+      Tags:   &amp;pinecone.IndexTags{ "environment": "development" },
+
+})
+  if err != nil {
+      log.Fatalf("Failed to create serverless integrated index: %v", idx.Name)
+  } else {
+      fmt.Printf("Successfully created serverless integrated index: %v", idx.Name)
+  }
+</code></pre>
+<p>}
+  ```</p>
+<p>```csharp C# theme={null}
+  using Pinecone;</p>
+<p>var pinecone = new PineconeClient("YOUR_API_KEY");</p>
+<p>var createIndexRequest = await pinecone.CreateIndexForModelAsync(
+      new CreateIndexForModelRequest
+      {
+          Name = "integrated-sparse-dotnet",
+          Cloud = CreateIndexForModelRequestCloud.Aws,
+          Region = "us-east-1",
+          Embed = new CreateIndexForModelRequestEmbed
+          {
+              Model = "pinecone-sparse-english-v0",
+              FieldMap = new Dictionary<string, object?>() 
+              { 
+                  { "text", "chunk_text" } 
+              }
+          },
+          DeletionProtection = DeletionProtection.Disabled,
+          Tags = new Dictionary<string, string> 
+          { 
+              { "environment", "development" }
+          }
+      }
+  );
+  ```</p>
+<p>```shell curl theme={null}
+  PINECONE_API_KEY="YOUR_API_KEY"</p>
+<p>curl -X POST "https://api.pinecone.io/indexes/create-for-model" \
+       -H "Content-Type: application/json" \
+       -H "Api-Key: $PINECONE_API_KEY" \
+       -H "X-Pinecone-Api-Version: 2025-10" \
+       -d '{
+             "name": "integrated-sparse-curl",
+             "cloud": "aws",
+             "region": "us-east-1",
+             "embed": {
+               "model": "pinecone-sparse-english-v0",
+               "field_map": {
+                 "text": "chunk_text"
+               }
+             }
+           }'
+  ```</p>
+<p><code>bash CLI theme={null}
+  # Target the project where you want to create the index.
+  pc target -o "example-org" -p "example-project"
+  # Create the index.
+  pc index create \
+    --name "integrated-sparse-cli" \
+    --cloud "aws" \
+    --region "us-east-1" \
+    --model "pinecone-sparse-english-v0" \
+    --field_map "text=chunk_text" \
+    --tags "environment=development"</code>
+</CodeGroup></p>
+<h3 id="bring-your-own-vectors_1">Bring your own vectors</h3>
+<p>If you use an external embedding model to convert your data to sparse vectors, <a href="/reference/api/latest/control-plane/create_index">create an index</a> as follows:</p>
+<ul>
+<li>Provide a <code>name</code> for the index.</li>
+<li>Set the <code>vector_type</code> to <code>sparse</code>.</li>
+<li>Set the distance <code>metric</code> to <code>dotproduct</code>. Indexes that store sparse vectors do not support other <a href="/guides/index-data/indexing-overview#distance-metrics">distance metrics</a>.</li>
+<li>Set <code>spec.cloud</code> and <code>spec.region</code> to the cloud and region where the index should be deployed.</li>
+</ul>
+<p>Other parameters are optional. See the <a href="/reference/api/latest/control-plane/create_index">API reference</a> for details.</p>
+<p><CodeGroup>
+  ```python Python theme={null}
+  from pinecone import Pinecone, ServerlessSpec</p>
+<p>pc = Pinecone(api_key="YOUR_API_KEY")</p>
+<p>index_name = "standard-sparse-py"</p>
+<p>if not pc.has_index(index_name):
+      pc.create_index(
+          name=index_name,
+          vector_type="sparse",
+          metric="dotproduct",
+          spec=ServerlessSpec(cloud="aws", region="us-east-1")
+      )
+  ```</p>
+<p>```javascript JavaScript theme={null}
+  import { Pinecone } from '@pinecone-database/pinecone'</p>
+<p>const pc = new Pinecone({ apiKey: 'YOUR_API_KEY' });</p>
+<p>await pc.createIndex({
+    name: 'standard-sparse-js',
+    vectorType: 'sparse',
+    metric: 'dotproduct',
+    spec: {
+      serverless: {
+        cloud: 'aws',
+        region: 'us-east-1'
+      },
+    },
+  });
+  ```</p>
+<p>```java Java theme={null}
+  import io.pinecone.clients.Pinecone;
+  import org.openapitools.db_control.client.model.DeletionProtection;</p>
+<p>import java.util.*;</p>
+<p>public class SparseIndex {
+      public static void main(String[] args) throws InterruptedException {
+          // Instantiate Pinecone class
+          Pinecone pinecone = new Pinecone.Builder("YOUR_API_KEY").build();</p>
+<pre><code>      // Create the index
+      String indexName = "standard-sparse-java";
+      String cloud = "aws";
+      String region = "us-east-1";
+      String vectorType = "sparse";
+      Map&lt;String, String&gt; tags = new HashMap&lt;&gt;();
+      tags.put("env", "test");
+      pinecone.createSparseServelessIndex(indexName,
+              cloud,
+              region,
+              DeletionProtection.DISABLED,
+              tags,
+              vectorType);
+  }
+</code></pre>
+<p>}
+  ```</p>
+<p>```go Go theme={null}
+  package main</p>
+<p>import (
+    "context"
+    "fmt"
+    "log"</p>
+<pre><code>"github.com/pinecone-io/go-pinecone/v4/pinecone"
+</code></pre>
+<p>)</p>
+<p>func main() {
+    ctx := context.Background()</p>
+<pre><code>pc, err := pinecone.NewClient(pinecone.NewClientParams{
+    ApiKey: "YOUR_API_KEY",
+})
+if err != nil {
+    log.Fatalf("Failed to create Client: %v", err)
+}
+
+indexName := "standard-sparse-go"
+vectorType := "sparse"
+metric := pinecone.Dotproduct
+deletionProtection := pinecone.DeletionProtectionDisabled
+
+idx, err := pc.CreateServerlessIndex(ctx, &amp;pinecone.CreateServerlessIndexRequest{
+    Name:               indexName,
+    Metric:             &amp;metric,
+    VectorType:         &amp;vectorType,
+    Cloud:              pinecone.Aws,
+    Region:             "us-east-1",
+    DeletionProtection: &amp;deletionProtection,
+})
+if err != nil {
+    log.Fatalf("Failed to create serverless index: %v", err)
+} else {
+    fmt.Printf("Successfully created serverless index: %v", idx.Name)
+}
+</code></pre>
+<p>}
+  ```</p>
+<p>```csharp C# theme={null}
+  using Pinecone;</p>
+<p>var pinecone = new PineconeClient("YOUR_API_KEY");</p>
+<p>var createIndexRequest = await pinecone.CreateIndexAsync(new CreateIndexRequest
+  {
+      Name = "standard-sparse-dotnet",
+      VectorType = VectorType.Sparse,
+      Metric = MetricType.Dotproduct,
+      Spec = new ServerlessIndexSpec
+      {
+          Serverless = new ServerlessSpec
+          {
+              Cloud = ServerlessSpecCloud.Aws,
+              Region = "us-east-1"
+          }
+      }
+  });
+  ```</p>
+<p>```shell curl theme={null}
+  PINECONE_API_KEY="YOUR_API_KEY"</p>
+<p>curl -X POST "https://api.pinecone.io/indexes" \
+       -H "Accept: application/json" \
+       -H "Content-Type: application/json" \
+       -H "Api-Key: $PINECONE_API_KEY" \
+       -H "X-Pinecone-Api-Version: 2025-10" \
+       -d '{
+              "name": "standard-sparse-curl",
+              "vector_type": "sparse",
+              "metric": "dotproduct",
+              "spec": {
+                 "serverless": {
+                    "cloud": "aws",
+                    "region": "us-east-1"
+                 }
+              }
+           }'
+  ```</p>
+<p><code>bash CLI theme={null}
+  # Target the project where you want to create the index.
+  pc target -o "example-org" -p "example-project"
+  # Create the index.
+  pc index create \
+    --name "standard-sparse-cli" \
+    --vector_type "sparse" \
+    --metric "dotproduct" \
+    --cloud "aws" \
+    --region "us-east-1" \
+    --tags "environment=development"</code>
+</CodeGroup></p>
+<h2 id="create-an-index-from-a-backup">Create an index from a backup</h2>
+<p>You can restore an index from a backup, regardless of whether it stores dense or sparse vectors. For more details, see <a href="/guides/manage-data/restore-an-index">Restore an index</a>.</p>
+<h2 id="metadata-indexing">Metadata indexing</h2>
+<p><Warning>
+  This feature is in <a href="/release-notes/feature-availability">early access</a> and available only on the <code>2025-10</code> version of the API. The CLI does not yet support this feature.
+</Warning></p>
+<p>Pinecone indexes all metadata fields by default. However, large amounts of metadata can cause slower <a href="/guides/get-started/database-architecture#index-builder">index building</a> as well as slower <a href="/guides/get-started/database-architecture#query-executors">query execution</a>, particularly when data is not cached in a query executor's memory and local SSD and must be fetched from object storage.</p>
+<p>To prevent performance issues due to excessive metadata, you can limit metadata indexing to the fields that you plan to use for <a href="/guides/search/filter-by-metadata">query filtering</a>.</p>
+<h3 id="set-metadata-indexing">Set metadata indexing</h3>
+<p>You can set metadata indexing during index creation or <a href="/reference/api/2025-10/data-plane/createnamespace">namespace creation</a>:</p>
+<ul>
+<li>Index-level metadata indexing rules apply to all namespaces that don't have explicit metadata indexing rules.</li>
+<li>Namespace-level metadata indexing rules overrides index-level metadata indexing rules.</li>
+</ul>
+<p>For example, let's say you want to store records that represent chunks of a document, with each record containing many metadata fields. Since you plan to use only a few of the metadata fields to filter queries, you would specify the metadata fields to index as follows.</p>
+<p><Warning>
+  Metadata indexing cannot be changed after index or namespace creation.
+</Warning></p>
+<p><CodeGroup>
+  ```shell Index-level metadata indexing theme={null}
+  PINECONE_API_KEY="YOUR_API_KEY"</p>
+<p>curl "https://api.pinecone.io/indexes" \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json" \
+    -H "Api-Key: $PINECONE_API_KEY" \
+    -H "X-Pinecone-Api-Version: 2025-10" \
+    -d '{
+          "name": "example-index-metadata",
+          "vector_type": "dense",
+          "dimension": 1536,
+          "metric": "cosine",
+          "spec": {
+            "serverless": {
+              "cloud": "aws",
+              "region": "us-east-1",
+              "schema": {
+                "fields": {
+                  "document_id": {
+                    "filterable": true
+                  },
+                  "document_title": {
+                    "filterable": true
+                  },
+                  "chunk_number": {
+                    "filterable": true
+                  },
+                  "document_url": {
+                    "filterable": true
+                  },
+                  "created_at": {
+                    "filterable": true
+                  }
+                }
+              }
+            }
+          },
+          "deletion_protection": "disabled"
+        }'
+  ```</p>
+<p>```shell Namespace-level metadata indexing theme={null}
+  # To learn how to get the unique host for an index,
+  # see https://docs.pinecone.io/guides/manage-data/target-an-index
+  PINECONE_API_KEY="YOUR_API_KEY"
+  INDEX_HOST="INDEX_HOST"</p>
+<p>curl "https://$INDEX_HOST/namespaces" \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json" \
+    -H "Api-Key: $PINECONE_API_KEY" \
+    -H "X-Pinecone-Api-Version: 2025-10" \
+    -d '{
+          "name": "example-namespace",
+          "schema": {
+            "fields": {
+              "document_id": {
+                "filterable": true
+              },
+              "document_title": {
+                "filterable": true
+              },
+              "chunk_number": {
+                "filterable": true
+              },
+              "document_url": {
+                "filterable": true
+              },
+              "created_at": {
+                "filterable": true
+              }
+            }
+          }
+        }'
+  ```
+</CodeGroup></p>
+<h3 id="check-metadata-indexing">Check metadata indexing</h3>
+<p>To check which metadata fields are indexed, you can describe the index or namespace:</p>
+<p><CodeGroup>
+  ```shell Describe index theme={null}
+  PINECONE_API_KEY="YOUR_API_KEY"</p>
+<p>curl -X GET "https://api.pinecone.io/indexes/example-index-metadata" \
+       -H "Api-Key: $PINECONE_API_KEY" \
+       -H "X-Pinecone-Api-Version: 2025-10"
+  ```</p>
+<p>```shell Describe namespace theme={null}
+  # To learn how to get the unique host for an index,
+  # see https://docs.pinecone.io/guides/manage-data/target-an-index
+  PINECONE_API_KEY="YOUR_API_KEY"
+  INDEX_HOST="INDEX_HOST"</p>
+<p>curl -X GET "https://$INDEX_HOST/namespaces/example-namespace" \
+       -H "Api-Key: $PINECONE_API_KEY" \
+       -H "X-Pinecone-Api-Version: 2025-10"
+  ```
+</CodeGroup></p>
+<p>The response includes the <code>schema</code> object with the names of the metadata fields explicitly indexed during index or namespace creation.</p>
+<p><Note>
+  The response does not include unindexed metadata fields or metadata fields indexed by default.
+</Note></p>
+<p><CodeGroup>
+  ```json Describe index theme={null}
+  {
+    "id": "751ab850-6e61-4f92-bd23-fa129803d207",
+    "vector_type": "dense",
+    "name": "example-index",
+    "metric": "cosine",
+    "dimension": 1536,
+    "status": {
+      "ready": false,
+      "state": "Initializing"
+    },
+    "host": "example-index-fa77d8e.svc.aped-4627-b74a.pinecone.io",
+    "spec": {
+      "serverless": {
+        "region": "us-east-1",
+        "cloud": "aws",
+        "read_capacity": {
+          "mode": "OnDemand",
+          "status": "Ready"
+        },
+        "schema": {
+          "fields": {
+            "document_id": {
+              "filterable": true
+            },
+            "document_title": {
+              "filterable": true
+            },
+            "created_at": {
+              "filterable": true
+            },
+            "chunk_number": {
+              "filterable": true
+            },
+            "document_url": {
+              "filterable": true
+            }
+          }
+        }
+      }
+    },
+    "deletion_protection": "disabled",
+    "tags": null
+  }</p>
+<p>```</p>
+<p><code>json Describe namespace theme={null}
+  {
+    "name": "example-namespace",
+    "record_count": "20000",
+    "schema": {
+      "fields": {
+        "document_title": {
+          "filterable": true
+        },
+        "document_url": {
+          "filterable": true
+        },
+        "chunk_number": {
+          "filterable": true
+        },
+        "document_id": {
+          "filterable": true
+        },
+        "created_at": {
+          "filterable": true
+        }
+      }
+    }
+  }</code>
+</CodeGroup></p>
+<h2 id="index-options">Index options</h2>
+<h3 id="cloud-regions">Cloud regions</h3>
+<p>When creating an index, you must choose the cloud and region where you want the index to be hosted. The following table lists the available public clouds and regions and the plans that support them:</p>
+<table>
+<thead>
+<tr>
+<th>Cloud</th>
+<th>Region</th>
+<th><a href="https://www.pinecone.io/pricing/">Supported plans</a></th>
+<th><a href="/release-notes/feature-availability">Availability phase</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aws</code></td>
+<td><code>us-east-1</code> (Virginia)</td>
+<td>Starter, Builder, Standard, Enterprise</td>
+<td>General availability</td>
+</tr>
+<tr>
+<td><code>aws</code></td>
+<td><code>us-west-2</code> (Oregon)</td>
+<td>Builder, Standard, Enterprise</td>
+<td>General availability</td>
+</tr>
+<tr>
+<td><code>aws</code></td>
+<td><code>eu-west-1</code> (Ireland)</td>
+<td>Builder, Standard, Enterprise</td>
+<td>General availability</td>
+</tr>
+<tr>
+<td><code>aws</code></td>
+<td><code>eu-central-1</code> (Frankfurt)</td>
+<td>Builder, Standard, Enterprise</td>
+<td>General availability</td>
+</tr>
+<tr>
+<td><code>aws</code></td>
+<td><code>ap-southeast-1</code> (Singapore)</td>
+<td>Builder, Standard, Enterprise</td>
+<td>General availability</td>
+</tr>
+<tr>
+<td><code>gcp</code></td>
+<td><code>us-central1</code> (Iowa)</td>
+<td>Builder, Standard, Enterprise</td>
+<td>General availability</td>
+</tr>
+<tr>
+<td><code>gcp</code></td>
+<td><code>europe-west4</code> (Netherlands)</td>
+<td>Builder, Standard, Enterprise</td>
+<td>General availability</td>
+</tr>
+<tr>
+<td><code>azure</code></td>
+<td><code>eastus2</code> (Virginia)</td>
+<td>Builder, Standard, Enterprise</td>
+<td>General availability</td>
+</tr>
+</tbody>
+</table>
+<p>The cloud and region cannot be changed after a serverless index is created.</p>
+<p><Note>
+  On the Starter plan, you can create serverless indexes in the <code>us-east-1</code> region of AWS only. To create indexes in other regions, <a href="/guides/organizations/manage-billing/upgrade-billing-plan">upgrade to the Builder, Standard, or Enterprise plan</a>.
+</Note></p>
+<h3 id="similarity-metrics">Similarity metrics</h3>
+<p>When creating an index that stores dense vectors, you can choose from the following similarity metrics. For the most accurate results, choose the similarity metric used to train the embedding model for your vectors. For more information, see <a href="https://www.pinecone.io/learn/vector-similarity/">Vector Similarity Explained</a>.</p>
+<p><Note>Indexes that store <a href="#sparse-indexes">sparse vectors</a> must use the <code>dotproduct</code> metric.</Note></p>
+<p><AccordionGroup>
+  <Accordion title="Euclidean">
+    Querying indexes with this metric returns a similarity score equal to the squared Euclidean distance between the result and query vectors.</p>
+<pre><code>This metric calculates the square of the distance between two data points in a plane. It is one of the most commonly used distance metrics. For an example, see our [IT threat detection example](https://colab.research.google.com/github/pinecone-io/examples/blob/master/docs/it-threat-detection.ipynb).
+
+When you use `metric='euclidean'`, the most similar results are those with the **lowest similarity score**.
+</code></pre>
+<p></Accordion></p>
+<p><Accordion title="Cosine">
+    This is often used to find similarities between different documents. The advantage is that the scores are normalized to [-1,1] range. For an example, see our <a href="https://colab.research.google.com/github/pinecone-io/examples/blob/master/docs/gen-qa-openai.ipynb">generative question answering example</a>.
+  </Accordion></p>
+<p><Accordion title="Dotproduct">
+    This is used to multiply two vectors. You can use it to tell us how similar the two vectors are. The more positive the answer is, the closer the two vectors are in terms of their directions. For an example, see our <a href="https://colab.research.google.com/github/pinecone-io/examples/blob/master/docs/semantic-search.ipynb">semantic search example</a>.
+  </Accordion>
+</AccordionGroup></p>
+<h3 id="embedding-models">Embedding models</h3>
+<p><a href="/guides/get-started/concepts#dense-vector">Dense vectors</a> and <a href="/guides/get-started/concepts#sparse-vector">sparse vectors</a> are the basic units of data in Pinecone and what Pinecone was specially designed to store and work with. Dense vectors represents the semantics of data such as text, images, and audio recordings, while sparse vectors represent documents or queries in a way that captures keyword information.</p>
+<p>To transform data into vector format, you use an embedding model. Pinecone hosts several embedding models so it's easy to manage your vector storage and search process on a single platform. You can use a hosted model to embed your data as an integrated part of upserting and querying, or you can use a hosted model to embed your data as a standalone operation.</p>
+<p>The following embedding models are hosted by Pinecone.</p>
+<p><Note>
+  To understand how cost is calculated for embedding, see <a href="/guides/manage-cost/understanding-cost#embedding">Embedding cost</a>. To get model details via the API, see <a href="/reference/api/latest/inference/list_models">List models</a> and <a href="/reference/api/latest/inference/describe_model">Describe a model</a>.
+</Note></p>
+<h4 id="multilingual-e5-large">multilingual-e5-large</h4>
+<p><a href="/models/multilingual-e5-large"><code>multilingual-e5-large</code></a> is an efficient dense embedding model trained on a mixture of multilingual datasets. It works well on messy data and short queries expected to return medium-length passages of text (1-2 paragraphs).</p>
+<p><strong>Details</strong></p>
+<ul>
+<li>Vector type: Dense</li>
+<li>Modality: Text</li>
+<li>Dimension: 1024</li>
+<li>Recommended similarity metric: Cosine</li>
+<li>Max sequence length: 507 tokens</li>
+<li>Max batch size: 96 sequences</li>
+</ul>
+<p>For rate limits, see <a href="/reference/api/database-limits#embedding-tokens-per-minute-per-model">Embedding tokens per minute</a> and <a href="/reference/api/database-limits#embedding-tokens-per-month-per-model">Embedding tokens per month</a>.</p>
+<p><strong>Parameters</strong></p>
+<p>The <code>multilingual-e5-large</code> model supports the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Required/Optional</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>input_type</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">The type of input data. Accepted values: <code>query</code> or <code>passage</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>truncate</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">How to handle inputs longer than those supported by the model. Accepted values: <code>END</code> or <code>NONE</code>.<br /><br /><code>END</code> truncates the input sequence at the input token limit. <code>NONE</code> returns an error when the input exceeds the input token limit.</td>
+<td style="text-align: left;"><code>END</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="llama-text-embed-v2">llama-text-embed-v2</h4>
+<p><a href="/models/llama-text-embed-v2"><code>llama-text-embed-v2</code></a> is a high-performance dense embedding model optimized for text retrieval and ranking tasks. It is trained on a diverse range of text corpora and provides strong performance on longer passages and structured documents.</p>
+<p><strong>Details</strong></p>
+<ul>
+<li>Vector type: Dense</li>
+<li>Modality: Text</li>
+<li>Dimension: 1024 (default), 2048, 768, 512, 384</li>
+<li>Recommended similarity metric: Cosine</li>
+<li>Max sequence length: 2048 tokens</li>
+<li>Max batch size: 96 sequences</li>
+</ul>
+<p>For rate limits, see <a href="/reference/api/database-limits#embedding-tokens-per-minute-per-model">Embedding tokens per minute</a> and <a href="/reference/api/database-limits#embedding-tokens-per-month-per-model">Embedding tokens per month</a>.</p>
+<p><strong>Parameters</strong></p>
+<p>The <code>llama-text-embed-v2</code> model supports the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Required/Optional</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>input_type</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">The type of input data. Accepted values: <code>query</code> or <code>passage</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>truncate</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">How to handle inputs longer than those supported by the model. Accepted values: <code>END</code> or <code>NONE</code>.<br /><br /><code>END</code> truncates the input sequence at the input token limit. <code>NONE</code> returns an error when the input exceeds the input token limit.</td>
+<td style="text-align: left;"><code>END</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dimension</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">Dimension of the vector to return.</td>
+<td style="text-align: left;">1024</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pinecone-sparse-english-v0">pinecone-sparse-english-v0</h4>
+<p><a href="/models/pinecone-sparse-english-v0"><code>pinecone-sparse-english-v0</code></a> is a sparse embedding model for converting text to <a href="/guides/get-started/concepts#sparse-vector">sparse vectors</a> for <a href="/guides/search/lexical-search">sparse-vector lexical search</a> or hybrid search. Built on the innovations of the <a href="https://arxiv.org/pdf/2104.12016">DeepImpact architecture</a>, the model directly estimates the lexical importance of tokens by leveraging their context, unlike traditional retrieval models like BM25, which rely solely on term frequency.</p>
+<p><strong>Details</strong></p>
+<ul>
+<li>Vector type: Sparse</li>
+<li>Modality: Text</li>
+<li>Recommended similarity metric: Dotproduct</li>
+<li>Max sequence length: 512 or 2048</li>
+<li>Max batch size: 96 sequences</li>
+</ul>
+<p>For rate limits, see <a href="/reference/api/database-limits#embedding-tokens-per-minute-per-model">Embedding tokens per minute</a> and <a href="/reference/api/database-limits#embedding-tokens-per-month-per-model">Embedding tokens per month</a>.</p>
+<p><strong>Parameters</strong></p>
+<p>The <code>pinecone-sparse-english-v0</code> model supports the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Required/Optional</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>input_type</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">The type of input data. Accepted values: <code>query</code> or <code>passage</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>max_tokens_per_sequence</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">Maximum number of tokens to embed. Accepted values: <code>512</code> or <code>2048</code>.</td>
+<td style="text-align: left;"><code>512</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>truncate</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">How to handle inputs longer than those supported by the model. Accepted values: <code>END</code> or <code>NONE</code>.<br /><br /><code>END</code> truncates the input sequence at the the <code>max_tokens_per_sequence</code> limit. <code>NONE</code> returns an error when the input exceeds the <code>max_tokens_per_sequence</code> limit.</td>
+<td style="text-align: left;"><code>END</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>return_tokens</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">Whether to return the string tokens.</td>
+<td style="text-align: left;"><code>false</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
