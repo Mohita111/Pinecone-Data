@@ -1,0 +1,701 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+    
+    
+      
+        <title>02 Concepts - Amazon and Pinecone Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentation-index" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Amazon and Pinecone Documentation" class="md-header__button md-logo" aria-label="Amazon and Pinecone Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Amazon and Pinecone Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              02  Concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Amazon and Pinecone Documentation" class="md-nav__button md-logo" aria-label="Amazon and Pinecone Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Amazon and Pinecone Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-Test%20Scale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TestScale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-Concepts.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-text-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Full-text search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-with-dense-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index with dense vectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-with-sparse-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index with sparse vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Namespace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#record" class="md-nav__link">
+    <span class="md-ellipsis">
+      Record
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Document">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#record-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Record ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dense-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dense vector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sparse-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sparse vector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      API key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-or-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup or collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinecone-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinecone Inference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-unit-ru" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read unit (RU)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-unit-wu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write unit (WU)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn more
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<blockquote>
+<h2 id="documentation-index">Documentation Index</h2>
+<p>Fetch the complete documentation index at: https://docs.pinecone.io/llms.txt
+Use this file to discover all available pages before exploring further.</p>
+</blockquote>
+<h1 id="concepts">Concepts</h1>
+<blockquote>
+<p>Understand concepts in Pinecone and how they relate to each other.</p>
+</blockquote>
+<p><img className="block max-w-full dark:hidden" noZoom src="https://mintcdn.com/pinecone/pBbXhyz41iPzpfh0/images/objects.png?fit=max&auto=format&n=pBbXhyz41iPzpfh0&q=85&s=6aaa656d58401fc1cdd75974ab1d1c73" width="1180" height="600" data-path="images/objects.png" /></p>
+<p><img className="hidden max-w-full dark:block" noZoom src="https://mintcdn.com/pinecone/pBbXhyz41iPzpfh0/images/objects-dark.png?fit=max&auto=format&n=pBbXhyz41iPzpfh0&q=85&s=5f70c26d69d475be702101cfc2c5a307" width="1180" height="600" data-path="images/objects-dark.png" /></p>
+<h2 id="organization">Organization</h2>
+<p>An organization is a group of one or more <a href="#project">projects</a> that use the same billing. Organizations allow one or more <a href="#user">users</a> to control billing and permissions for all of the projects belonging to the organization.</p>
+<p>For more information, see <a href="/guides/organizations/understanding-organizations">Understanding organizations</a>.</p>
+<h2 id="project">Project</h2>
+<p>A project belongs to an <a href="#organization">organization</a> and contains one or more <a href="#index">indexes</a>. Each project belongs to exactly one organization, but only <a href="#user">users</a> who belong to the project can access the indexes in that project. <a href="#api-key">API keys</a> and <a href="#assistant">Assistants</a> are project-specific.</p>
+<p>For more information, see <a href="/guides/projects/understanding-projects">Understanding projects</a>.</p>
+<h2 id="index">Index</h2>
+<p>Pinecone <a href="/guides/index-data/indexing-overview">serverless indexes</a> hold your data as <a href="#document">documents</a> — JSON objects with ranking fields that Pinecone indexes according to a schema you define, plus any number of metadata fields. A single index can mix multiple ranking field types: a <code>dense_vector</code> field for <a href="#index-with-dense-vectors">semantic search</a>, a <code>sparse_vector</code> field for <a href="#index-with-sparse-vectors">sparse-vector retrieval</a>, and one or more <code>string</code> fields with <code>full_text_search</code> enabled for <a href="#full-text-search">full-text search</a> with BM25 and Lucene queries. Metadata fields (anything else you upsert) are auto-indexed for filtering at upsert time — no schema declaration required.</p>
+<p>One index per use case is the typical pattern. Because a document can combine vectors, text, and metadata in the same record, a single index often covers what previously required two — pick the ranking signal per query with <code>score_by</code>.</p>
+<h3 id="full-text-search">Full-text search</h3>
+<p>Full-text search is <strong>BM25 token matching with Lucene query syntax</strong> over text fields in your schema — <code>string</code> fields you've declared with <code>full_text_search</code> so their content is indexed for token-level retrieval. "Text field" is the colloquial name; the JSON <code>type</code> is <code>string</code>. No model required — Pinecone handles tokenization, IDF, and length normalization at index time and BM25 scoring at query time. "Token" here means a unit produced by Pinecone's text analyzer (whitespace + punctuation split, lowercased, optionally stemmed) — not the subword unit a dense or sparse embedding model uses internally. See <a href="/guides/search/full-text-search#tokens-and-analyzers">Tokens and analyzers</a> for the full pipeline.</p>
+<p>How it works:</p>
+<ol>
+<li>You upsert data as JSON <a href="#document">documents</a>.</li>
+<li>You declare each ranking field's type in the index schema: <code>dense_vector</code>, <code>sparse_vector</code>, or <code>string</code> with <code>full_text_search</code> (indexed for BM25 ranking and Lucene queries). Metadata fields are not declared in the schema.</li>
+<li>Pinecone indexes each ranking field according to its declared type and auto-indexes any other fields on the document for metadata filtering.</li>
+</ol>
+<p>When you search, you choose a scoring method via <code>score_by</code>. The literal value of <code>type</code> selects the method: <code>text</code> (BM25 token matching on a single text field), <code>query_string</code> (<a href="/guides/search/full-text-search#query-syntax-reference">Lucene query syntax</a> across one or more text fields, including cross-field boolean queries), <code>dense_vector</code> (vector similarity), or <code>sparse_vector</code> (sparse-vector similarity). Any scoring method can be combined with metadata filters — including logical operators (<code>$and</code>, <code>$or</code>, <code>$not</code>), existence checks (<code>$exists</code>), and the text-match operators (<code>$match_phrase</code>, <code>$match_all</code>, <code>$match_any</code>) for phrase and token matching against text fields.</p>
+<p>Use full-text search for keyword and phrase search over text content — product names, identifiers, technical terms, code, and other cases where queries and documents share specific tokens. For sparse-vector retrieval with a learned encoder (such as <a href="/models/pinecone-sparse-english-v0"><code>pinecone-sparse-english-v0</code></a>), see <a href="#index-with-sparse-vectors">Index with sparse vectors</a>. For semantic similarity over natural-language queries, see <a href="#index-with-dense-vectors">Index with dense vectors</a>.</p>
+<p>Learn more:</p>
+<ul>
+<li><a href="/guides/search/full-text-search">Full-text search</a></li>
+<li><a href="#document">Document</a></li>
+</ul>
+<h3 id="index-with-dense-vectors">Index with dense vectors</h3>
+<p>These indexes store records that each have one <a href="#dense-vector">dense vector</a>. A dense vector is a series of numbers that represent the meaning and relationships of text, images, or other data. Each vector is a point in a multidimensional space; each number is a coordinate in that space. Vectors that are closer together in that space are semantically similar.</p>
+<p>When you query an index with dense vectors, Pinecone retrieves records whose vectors are most semantically similar to the query. This is often called <strong>semantic search</strong>, nearest neighbor search, similarity search, or just vector search.</p>
+<p><Note>
+  If records in an index with dense vectors also have a <a href="#sparse-vector">sparse vector</a>, the index supports single-index <a href="/guides/search/hybrid-search#use-a-single-index-for-dense-and-sparse-vectors">hybrid search</a> on the same records. This single-index pattern uses the vector API and isn't available for indexes with document schemas. To combine a lexical signal with a dense signal in an index with a document schema, restrict a dense search with a text-match filter or run separate searches and merge the results client-side; see <a href="/guides/search/hybrid-search">Hybrid search</a>.
+</Note></p>
+<h3 id="index-with-sparse-vectors">Index with sparse vectors</h3>
+<p>These indexes store records that each have one <a href="#sparse-vector">sparse vector</a> — a vector with very high dimensionality but only a small number of non-zero values. Each dimension typically corresponds to a token in a vocabulary; the non-zero values represent the importance of those tokens in a document.</p>
+<p>When you search an index with sparse vectors, Pinecone retrieves records whose vectors share the most weighted tokens with the query vector. This is often called <strong>sparse-vector retrieval</strong> or <strong>sparse-vector lexical search</strong>.</p>
+<p>Sparse vectors are produced by a sparse embedding model. Pinecone hosts <a href="/models/pinecone-sparse-english-v0"><code>pinecone-sparse-english-v0</code></a>, a learned-sparse encoder that predicts per-token weights and includes term expansion (related concepts that don't appear in the source text). You can also bring your own sparse model.</p>
+<p><Note>
+  <strong>Sparse-vector lexical search vs. full-text search.</strong> Both retrieve documents using token-level signals over an inverted index. They differ in how tokens are weighted: <a href="#full-text-search">full-text search</a> uses <strong>BM25</strong> — a statistical scoring function with no machine learning, computed at query time over your raw text fields. Sparse-vector lexical search uses a <strong>learned sparse encoder</strong> that produces token weights at index time, often with term expansion. Use full-text search when you want a strong baseline with no model to manage; use sparse vectors when a learned encoder (yours or Pinecone's hosted one) better captures your domain's term importance and synonyms.</p>
+<p>A useful gradient: dense ranks on <strong>concept</strong> (semantic similarity), full-text search ranks on <strong>strict character-level token matching</strong> (BM25), and sparse-vector lexical search sits <strong>between them</strong> — token-aware, but with learned per-token weights and term expansion. Sparse vectors carry no positional information, so phrase matching (<code>"machine learning"</code> as a contiguous span) requires full-text search, not sparse.
+</Note></p>
+<h2 id="namespace">Namespace</h2>
+<p>A namespace is a partition within an index. It divides <a href="#record">records</a> into separate groups so that each query scans only one namespace (faster lookups) and each customer's data can be isolated from another customer's (multitenant isolation).</p>
+<p>All <a href="/guides/index-data/upsert-data">upserts</a>, <a href="/guides/search/search-overview">queries</a>, and other data read and write operations always target one namespace:</p>
+<p><img className="block max-w-full dark:hidden" noZoom src="https://mintcdn.com/pinecone/pBbXhyz41iPzpfh0/images/quickstart-upsert.png?fit=max&auto=format&n=pBbXhyz41iPzpfh0&q=85&s=c852ca55745a70ed51e5892330751830" width="1400" height="783" data-path="images/quickstart-upsert.png" /></p>
+<p><img className="hidden max-w-full dark:block" noZoom src="https://mintcdn.com/pinecone/pBbXhyz41iPzpfh0/images/quickstart-upsert-dark.png?fit=max&auto=format&n=pBbXhyz41iPzpfh0&q=85&s=93bc6a0986fab5c8a736ca0bb50834bd" width="1400" height="783" data-path="images/quickstart-upsert-dark.png" /></p>
+<p>For more information, see <a href="/guides/index-data/indexing-overview#namespaces">Use namespaces</a>.</p>
+<h2 id="record">Record</h2>
+<p>A record is the unit of data for <a href="#index-with-dense-vectors">indexes with dense vectors</a> and <a href="#index-with-sparse-vectors">indexes with sparse vectors</a>: a <a href="#record-id">record ID</a>, one vector (or both vector types for single-index <a href="/guides/search/hybrid-search">hybrid search</a>), and optional <a href="#metadata">metadata</a>. With <a href="/guides/index-data/indexing-overview#integrated-embedding">integrated embedding</a> you can upsert raw text instead of a vector, and Pinecone embeds it at index time. When an item has more than one searchable field — say, a text field ranked by BM25 alongside a <code>dense_vector</code> field for similarity — model it as a <a href="#document">document</a>.</p>
+<p>For more information, see <a href="/guides/index-data/upsert-data">Upsert data</a>.</p>
+<h2 id="document">Document</h2>
+<p>A document is the unit of data in an index with a document schema — a JSON object with a required <code>_id</code> field, the ranking fields declared in the index's schema, and any number of metadata fields. Documents support multiple ranking field types in a single record: a <code>dense_vector</code> field (for <a href="#index-with-dense-vectors">semantic search</a>), a <code>sparse_vector</code> field (for <a href="#index-with-sparse-vectors">sparse-vector retrieval</a>), and one or more <code>string</code> fields with <code>full_text_search</code> enabled (for <a href="#full-text-search">full-text search</a>). A single document can carry vectors, text, and metadata together, and you choose the scoring method per query via <code>score_by</code>. Documents are the recommended shape for new multi-field and full-text workloads; vector-only indexes continue to use <a href="#record">records</a>. Both APIs are fully supported.</p>
+<p>Document fields can hold structured values: a metadata <code>string_list</code> field holds an array of strings; a <code>dense_vector</code> field holds an array of floats; a <code>sparse_vector</code> field is an object with two parallel arrays — <code>indices</code> (token positions) and <code>values</code> (token weights).</p>
+<p>A schema can declare up to 100 <code>string</code> fields with <code>full_text_search</code> enabled, but at most one <code>dense_vector</code> field and at most one <code>sparse_vector</code> field per index.</p>
+<p>Metadata fields are not declared in the schema. Any field on an upserted document that is not declared in the schema is stored, returned via <code>include_fields</code>, and automatically indexed for filtering. Pinecone infers metadata field types (string, number, boolean, array of strings) from the values you upsert.</p>
+<p>Field names must be unique, non-empty strings, must not start with <code>_</code> (reserved for system-managed fields like <code>_id</code> and <code>_score</code>) or <code>$</code> (reserved for filter operators), and are limited to 64 bytes.</p>
+<p>For more information, see <a href="/guides/search/full-text-search">Full-text search</a>.</p>
+<h3 id="record-id">Record ID</h3>
+<p>A record ID is a record's unique ID. <a href="/guides/index-data/data-modeling#use-structured-ids">Use ID prefixes</a> that reflect the type of data you're storing.</p>
+<h3 id="dense-vector">Dense vector</h3>
+<p>A dense vector, also referred to as a vector embedding or simply a vector, is a series of numbers that represent the meaning and relationships of data. Each vector is a point in a multidimensional space; each number is a coordinate in that space. Vectors that are closer together in that space are semantically similar.</p>
+<p>Dense vectors are stored in indexes (see <a href="#index-with-dense-vectors">Index with dense vectors</a>).</p>
+<p>You use a dense embedding model to convert data to dense vectors. The embedding model can be external to Pinecone or <a href="/guides/index-data/create-an-index#embedding-models">hosted on Pinecone infrastructure</a> and integrated with an index.</p>
+<p>For more information about dense vectors, see <a href="https://www.pinecone.io/learn/vector-embeddings/">What are vector embeddings?</a>.</p>
+<h3 id="sparse-vector">Sparse vector</h3>
+<p>Sparse vectors are often used to represent documents or queries in a way that captures keyword information. Each dimension in a sparse vector typically represents a word from a dictionary, and the non-zero values represent the importance of these words in the document.</p>
+<p>Sparse vectors have a large number of dimensions, but a small number of those values are non-zero. Because most values are zero, Pinecone stores sparse vectors efficiently by keeping only the non-zero values along with their corresponding indices.</p>
+<p>Sparse vectors are stored in indexes (see <a href="#index-with-sparse-vectors">Index with sparse vectors</a>) and can also coexist with dense vectors in a single index for <a href="/guides/search/hybrid-search#use-a-single-index-for-dense-and-sparse-vectors">hybrid search</a> on the vector API. To combine a lexical signal with a dense signal in an index with a document schema, restrict a dense search with a text-match filter on a <code>string</code> field with <code>full_text_search</code> enabled or run separate searches and merge the results client-side. To convert data to sparse vectors, use a sparse embedding model. The embedding model can be external to Pinecone or <a href="/guides/index-data/create-an-index#embedding-models">hosted on Pinecone infrastructure</a> and integrated with an index.</p>
+<p>For more information about sparse vectors, see <a href="https://www.pinecone.io/learn/sparse-retrieval/">Sparse retrieval</a>.</p>
+<h3 id="metadata">Metadata</h3>
+<p>Metadata is additional information included in a record to provide more context and enable additional <a href="/guides/index-data/indexing-overview#metadata">filtering capabilities</a>. For example, the original text that was embedded can be stored in the metadata.</p>
+<h2 id="other-concepts">Other concepts</h2>
+<p>Although not represented in the diagram above, Pinecone also contains the following concepts:</p>
+<ul>
+<li><a href="#api-key">API key</a></li>
+<li><a href="#user">User</a></li>
+<li><a href="#backup-or-collection">Backup or collection</a></li>
+<li><a href="#pinecone-inference">Pinecone Inference</a></li>
+<li><a href="#read-unit-ru">Read unit (RU)</a></li>
+<li><a href="#write-unit-wu">Write unit (WU)</a></li>
+</ul>
+<h3 id="api-key">API key</h3>
+<p>An API key is a unique token that <a href="/reference/api/authentication">authenticates</a> and authorizes access to the <a href="/reference/api/introduction">Pinecone APIs</a>. API keys are project-specific.</p>
+<h3 id="user">User</h3>
+<p>A user is a member of organizations and projects. Users are assigned specific roles at the organization and project levels that determine the user's permissions in the <a href="https://app.pinecone.io">Pinecone console</a>.</p>
+<p>For more information, see <a href="/guides/organizations/manage-organization-members">Manage organization members</a> and <a href="/guides/projects/manage-project-members">Manage project members</a>.</p>
+<h3 id="backup-or-collection">Backup or collection</h3>
+<p>A backup is a static copy of a serverless index.</p>
+<p>Backups only consume storage. They are non-queryable representations of a set of records. You can create a backup from an index, and you can create a new index from that backup. The new index configuration can differ from the original source index: for example, it can have a different name. However, it must have the same number of dimensions and similarity metric as the source index.</p>
+<p>For more information, see <a href="/guides/manage-data/backups-overview">Understanding backups</a>.</p>
+<h3 id="pinecone-inference">Pinecone Inference</h3>
+<p>Pinecone Inference is an API service that provides access to <a href="/guides/index-data/create-an-index#embedding-models">embedding models</a> and <a href="/guides/search/rerank-results#reranking-models">reranking models</a> hosted on Pinecone's infrastructure.</p>
+<h3 id="read-unit-ru">Read unit (RU)</h3>
+<p>A read unit (RU) is the unit Pinecone uses to measure and price the cost of read requests to a serverless index, including <a href="/guides/manage-cost/understanding-cost#query">query</a>, <a href="/guides/manage-cost/understanding-cost#fetch">fetch</a>, and <a href="/guides/manage-cost/understanding-cost#list">list</a>.</p>
+<p>For how read units are calculated, see <a href="/guides/manage-cost/understanding-cost#read-units">Understanding cost</a>.</p>
+<h3 id="write-unit-wu">Write unit (WU)</h3>
+<p>A write unit (WU) is the unit Pinecone uses to measure and price the cost of write requests to a serverless index, including <a href="/guides/manage-cost/understanding-cost#upsert">upsert</a>, <a href="/guides/manage-cost/understanding-cost#update">update</a>, and <a href="/guides/manage-cost/understanding-cost#delete">delete</a>.</p>
+<p>For how write units are calculated, see <a href="/guides/manage-cost/understanding-cost#write-units">Understanding cost</a>.</p>
+<h2 id="learn-more">Learn more</h2>
+<ul>
+<li><a href="https://www.pinecone.io/learn/vector-database/">Vector database</a></li>
+<li><a href="/reference/api/introduction">Pinecone APIs</a></li>
+<li><a href="https://www.pinecone.io/learn/a-developers-guide-to-ann-algorithms/">Approximate nearest neighbor (ANN) algorithms</a></li>
+<li><a href="https://www.pinecone.io/learn/retrieval-augmented-generation/">Retrieval augmented generation (RAG)</a></li>
+<li><a href="https://www.pinecone.io/learn/series/image-search/">Image search</a></li>
+<li><a href="https://www.pinecone.io/learn/tokenization/">Tokenization</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

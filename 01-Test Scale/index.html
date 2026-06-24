@@ -1,0 +1,930 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../03-Architecture/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+    
+    
+      
+        <title>TestScale - Amazon and Pinecone Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentation-index" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Amazon and Pinecone Documentation" class="md-header__button md-logo" aria-label="Amazon and Pinecone Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Amazon and Pinecone Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TestScale
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Amazon and Pinecone Documentation" class="md-nav__button md-logo" aria-label="Amazon and Pinecone Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Amazon and Pinecone Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TestScale
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    TestScale
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-pinecone-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Pinecone at scale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Pinecone at scale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-this-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      About this test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-get-an-api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Get an API key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-check-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Check costs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-clean-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Clean up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-Concepts.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-pinecone-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Pinecone at scale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Pinecone at scale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-this-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      About this test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-get-an-api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Get an API key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-check-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Check costs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-clean-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Clean up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<blockquote>
+<h2 id="documentation-index">Documentation Index</h2>
+<p>Fetch the complete documentation index at: https://docs.pinecone.io/llms.txt
+Use this file to discover all available pages before exploring further.</p>
+</blockquote>
+<h1 id="test-pinecone-at-scale">Test Pinecone at scale</h1>
+<blockquote>
+<p>Test Pinecone with a real-world dataset and semantic search workload.</p>
+</blockquote>
+<p>This guide walks you through testing Pinecone at production scale. You'll import 10 million vectors, run a benchmark, and analyze the results to verify Pinecone meets production requirements for semantic search applications.</p>
+<p><Note>
+  This test requires a Pinecone account on the Standard or Enterprise plan because it uses <a href="/guides/index-data/import-data">import from object storage</a>, which is not available on the Starter or Builder plans. New users can sign up for the <a href="/guides/organizations/manage-billing/standard-trial">Standard trial</a> for 21 days and \$300 in credits, more than enough to cover the costs of this test. Existing users on the Starter or Builder plan can <a href="/guides/organizations/manage-billing/upgrade-billing-plan">upgrade</a>.
+</Note></p>
+<h2 id="about-this-test">About this test</h2>
+<p>Semantic search enables finding relevant content based on meaning rather than exact keyword matches, making it ideal for applications like product search, content recommendation, and question-answering systems. This test simulates a production-scale semantic search workload, measuring import time, query throughput, query latency, and associated costs.</p>
+<p>The test uses the following configuration:</p>
+<ul>
+<li><strong>Records</strong>: 10 million records from the <a href="https://amazon-reviews-2023.github.io/">Amazon Reviews 2023</a> dataset</li>
+<li><strong>Embedding model</strong>: <code>llama-text-embed-v2</code> (1024 dimensions)</li>
+<li><strong>Similarity metric</strong>: cosine</li>
+<li><strong>Total size</strong>: 48.8 GB</li>
+<li><strong>Query load</strong>: 10 queries per second total (across all users)</li>
+<li><strong>Concurrent users</strong>: 10 users querying simultaneously</li>
+<li><strong>Test queries</strong>: 100,000 queries</li>
+<li><strong>Import time target</strong>: \&lt; 30 minutes</li>
+<li><strong>Query latency target</strong>: p90 latency \&lt; 100ms</li>
+</ul>
+<p><strong>Estimated cost</strong>: \~\$127 (import: \$48.80, queries: \$78.08, storage: \$0.09) — see <a href="#6-check-costs">detailed cost breakdown</a></p>
+<h2 id="1-get-an-api-key">1. Get an API key</h2>
+<p>To follow the steps in this guide, you'll need an API key. Create a new API key in the <a href="https://app.pinecone.io/organizations/-/keys">Pinecone console</a>, or use this widget:</p>
+<div style={{minWidth: '450px', minHeight:'152px'}}>
+  <div id="pinecone-connect-widget">
+    <div class="connect-widget-skeleton">
+      <div class="skeleton-content" />
+    </div>
+  </div>
+</div>
+
+<p>Your generated API key:</p>
+<p>```shell theme={null}
+"{{YOUR_API_KEY}}"</p>
+<pre><code>
+## 2. Create an index
+
+&lt;Note&gt;
+  This test requires you to use AWS-based indexes and infrastructure. The sample dataset is only available from Amazon S3, and you can only import from Amazon S3 to Pinecone indexes hosted on AWS. To run the benchmark, you'll need to provision an AWS EC2 instance in the same region as your index.
+&lt;/Note&gt;
+
+Create an on-demand index that matches the dimensions and similarity metric of the dataset you'll import in later steps.
+
+&lt;Tabs&gt;
+  &lt;Tab title=&quot;Console&quot;&gt;
+    1. In the Pinecone console, go to the [Indexes](https://app.pinecone.io/organizations/-/projects/-/indexes) page.
+    2. Click **Create index**.
+    3. Check **Custom settings**.
+    4. Configure the index with the following settings:
+       * **Name**: `search-10m`
+       * **Vector type**: Dense
+       * **Dimensions**: `1024`
+       * **Metric**: cosine
+       * **Capacity mode**: Serverless (on-demand)
+       * **Cloud**: AWS (required for this test)
+       * **Region**: Use an AWS region appropriate for your use case (for example, `us-east-1`)
+    5. Click **Create index**.
+  &lt;/Tab&gt;
+
+  &lt;Tab title=&quot;Code&quot;&gt;
+    If using code to create an index, first install the [Python SDK](/reference/python-sdk):
+
+    ```shell Terminal theme={null}
+    pip install pinecone
+    ```
+
+    Then, create the index:
+
+    &lt;CodeGroup&gt;
+      ```python Python theme={null}
+      from pinecone import Pinecone, ServerlessSpec
+
+      pc = Pinecone(api_key=&quot;{{YOUR_API_KEY}}&quot;)
+
+      index_name = &quot;search-10m&quot;
+
+      if not pc.has_index(index_name):
+          pc.create_index(
+              name=index_name,
+              vector_type=&quot;dense&quot;,
+              dimension=1024,
+              metric=&quot;cosine&quot;,
+              spec=ServerlessSpec(
+                  # AWS is required for this test
+                  cloud=&quot;aws&quot;,   
+                  # Use an AWS region appropriate for your use case
+                  region=&quot;us-east-1&quot; 
+              )
+          )
+      ```
+    &lt;/CodeGroup&gt;
+  &lt;/Tab&gt;
+&lt;/Tabs&gt;
+
+## 3. Import the dataset
+
+Pinecone's [import feature](/guides/index-data/import-data) enables you to load millions of vectors from object storage in parallel. In this step, you'll import 10 million records into a single namespace (`ns_2`) in your index.
+
+### Choose an import source
+
+To import the dataset, you'll need to use the following Amazon S3 import URL:
+
+</code></pre>
+<p>s3://fe-customer-pocs/search/search_10M/dense/</p>
+<pre><code>
+### Start and monitor the import
+
+For this dataset, the import should take less than 30 minutes.
+
+&lt;Tabs&gt;
+  &lt;Tab title=&quot;Console&quot;&gt;
+    1. In the Pinecone console, go to the [Indexes](https://app.pinecone.io/organizations/-/projects/-/indexes) page.
+    2. Find your `search-10m` index and click **... &gt; Import data**.
+    3. For **Storage integration**, select **No integration (public bucket)**.
+    4. Enter the import URL: `s3://fe-customer-pocs/search/search_10M/dense/`.
+    5. For **Error handling**, select **Abort on error (default)**.
+    6. Click **Start import**.
+
+    To monitor progress, open your index in the Pinecone console and navigate to the **Imports** tab. After the import completes, compare the **Started time** and **End time** timestamps to see the total time required.
+
+    &lt;Note&gt;
+      For this dataset, the import should take around 30 minutes. While the import is running, you can continue with the next step to provision a VM and install VSB. However, wait for the import to complete before running the benchmark.
+    &lt;/Note&gt;
+  &lt;/Tab&gt;
+
+  &lt;Tab title=&quot;Code&quot;&gt;
+    Start the import:
+
+    &lt;CodeGroup&gt;
+      ```python Python theme={null}
+      from pinecone import Pinecone, ImportErrorMode
+
+      pc = Pinecone(api_key=&quot;{{YOUR_API_KEY}}&quot;)
+      index = pc.Index(&quot;search-10m&quot;)
+
+      import_response = index.start_import(
+          uri=&quot;s3://fe-customer-pocs/search/search_10M/dense/&quot;,
+          error_mode=ImportErrorMode.ABORT 
+      )
+      print(f&quot;Import started: {import_response['id']}&quot;)
+      ```
+    &lt;/CodeGroup&gt;
+
+    Monitor import progress:
+
+    &lt;CodeGroup&gt;
+      ```python Python theme={null}
+      from pinecone import Pinecone
+      import time 
+
+      pc = Pinecone(api_key=&quot;{{YOUR_API_KEY}}&quot;)
+      index = pc.Index(&quot;search-10m&quot;)
+
+      while True:
+          status = index.describe_import(id=&quot;IMPORT_ID&quot;)
+          print(f&quot;Status: {status['status']}, Progress: {status['percent_complete']:.1f}%&quot;)
+          if status['status'] == &quot;Completed&quot;:
+              print(&quot;Import completed successfully!&quot;)
+              break
+          elif status['status'] == &quot;Failed&quot;:
+              print(&quot;Import failed. Check error details.&quot;)
+              break
+          elif status['status'] == &quot;Cancelled&quot;:
+              print(&quot;Import cancelled.&quot;)
+              break
+          time.sleep(15) # Check every 15 seconds
+      ```
+    &lt;/CodeGroup&gt;
+
+    &lt;Note&gt;
+      There are three ways to find the import ID:
+
+      * It's returned when the import is started
+      * In the Pinecone console, on the **Imports** tab for your index
+      * By calling [List imports](/reference/api/latest/data-plane/list_imports)
+    &lt;/Note&gt;
+  &lt;/Tab&gt;
+&lt;/Tabs&gt;
+
+## 4. Run the benchmark
+
+To simulate realistic query patterns and measure latency and throughput for your Pinecone index, use [Vector Search Bench (VSB)](https://github.com/pinecone-io/VSB). The benchmark runs 100,000 queries at 10 queries per second, which should take just under three hours to complete.
+
+&lt;Steps&gt;
+  &lt;Step title=&quot;Provision a VM&quot;&gt;
+    VSB reports latency as the time from when the tool issues a query to when the query is returned by Pinecone.
+
+    To minimize the client-side latency between the tool and Pinecone, run the benchmark on a dedicated AWS EC2 instance that's hosted in the same AWS region as your Pinecone index. This reduces the client-side latency to sub-millisecond range.
+
+    &lt;Note&gt;
+      As noted in [section 2](#2-create-an-index), this test requires an AWS EC2 instance in the same region as your index.
+    &lt;/Note&gt;
+
+    For instructions on how to provision an EC2 instance, see the [AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.html).
+
+    &lt;Note&gt;
+      Create a VM that comes with Python 3.11 or higher.
+    &lt;/Note&gt;
+  &lt;/Step&gt;
+
+  &lt;Step title=&quot;Connect to the VM&quot;&gt;
+    Connect to the VM using SSH or the cloud provider's console.
+  &lt;/Step&gt;
+
+  &lt;Step title=&quot;Install Vector Search Bench (VSB)&quot;&gt;
+    [VSB (Vector Search Bench)](https://github.com/pinecone-io/VSB) is a benchmarking suite for testing vector database search performance across different workloads and databases. To install it, you'll first need to install various dependencies.
+
+    1. **Verify Python version**
+
+       VSB requires Python 3.11 or higher to run. Verify your Python version:
+
+       ```bash Terminal theme={null}
+       python3 --version
+       ```
+
+       If your version is below 3.11, install Python 3.11+ using your distribution's package manager.
+
+    2. **Install git**
+
+       Git is required to clone the VSB repository. Check if git is installed:
+
+       ```bash Terminal theme={null}
+       git --version
+       ```
+
+       If git is not installed, install it using your system's package manager:
+
+       ```bash Terminal theme={null}
+       # Adapt for your VM's package manager (apt/yum/dnf)
+       sudo apt-get update &amp;&amp; sudo apt-get install git
+       ```
+
+    3. **Install pipx**
+
+       pipx is required to install Poetry. First, check if pip3 is installed:
+
+       ```bash Terminal theme={null}
+       pip3 --version
+       ```
+
+       If pip is not installed, install it using your system's package manager:
+
+       ```bash Terminal theme={null}
+       # Adapt for your VM's package manager (apt/yum/dnf)
+       sudo apt-get update &amp;&amp; sudo apt-get install python3-pip
+       ```
+
+       Then check if pipx is installed:
+
+       ```bash Terminal theme={null}
+       pipx --version
+       ```
+
+       If pipx is not installed, install it via your system's package manager:
+
+       ```bash Terminal theme={null}
+       # Adapt for your VM's package manager (apt/yum/dnf)
+       sudo apt-get update &amp;&amp; sudo apt-get install pipx
+       pipx ensurepath
+       ```
+
+       After installation, run this command to update the PATH in your current terminal session:
+
+       ```bash Terminal theme={null}
+       source ~/.bashrc
+       ```
+
+    4. **Install Poetry**
+
+       [Poetry](https://python-poetry.org/) is required to manage [VSB's](https://github.com/pinecone-io/VSB) Python dependencies and virtual environment. If Poetry is not [installed](https://python-poetry.org/docs/), use pipx to install it:
+
+       ```bash Terminal theme={null}
+       pipx install poetry
+       ```
+
+       Alternatively, use the [official Poetry installer](https://python-poetry.org/docs/#installing-with-the-official-installer).
+
+    5. **Clone the VSB repository**
+
+       To run the benchmark, you'll first need to clone the VSB repository and navigate to it:
+
+       ```bash Terminal theme={null}
+       git clone https://github.com/pinecone-io/VSB.git
+       cd VSB
+       ```
+
+    6. **Configure Poetry**
+
+       Since your VM has Python 3.11 or higher installed (as specified in the VM provisioning step), tell Poetry to use it:
+
+       ```bash Terminal theme={null}
+       poetry env use python3
+       ```
+
+    7. **Install dependencies**
+
+       VSB requires several Python packages to run. Install all dependencies:
+
+       ```bash Terminal theme={null}
+       poetry install
+       ```
+  &lt;/Step&gt;
+
+  &lt;Step title=&quot;Benchmark your Pinecone index&quot;&gt;
+    To test the performance of your Pinecone index, run the following command from within the `VSB` directory. For more information about VSB, see its [GitHub repository](https://github.com/pinecone-io/VSB).
+
+    The following command simulates 10 concurrent users issuing a total of 100,000 queries at 10 queries per second (QPS). Each query performs a vector search for the top 10 most similar 1024-dimensional vectors, using cosine similarity, with query vectors selected uniformly at random. The `--skip_populate` flag skips the data population phase, since you've already imported data into your index.
+
+    ```bash Terminal theme={null}
+    poetry run vsb \
+        --database=&quot;pinecone&quot; \
+        --workload=synthetic-proportional \
+        --pinecone_api_key=&quot;{{YOUR_API_KEY}}&quot; \
+        --pinecone_index_name=&quot;search-10m&quot; \
+        --pinecone_namespace_name=&quot;ns_2&quot; \
+        --synthetic_dimensions=1024 \
+        --synthetic_metric=cosine \
+        --synthetic_top_k=10 \
+        --synthetic_requests=100000 \
+        --users=10 \
+        --requests_per_sec=10 \
+        --synthetic_query_distribution=uniform \
+        --synthetic_query_ratio=1 \
+        --synthetic_insert_ratio=0 \
+        --synthetic_delete_ratio=0 \
+        --synthetic_update_ratio=0 \
+        --skip_populate
+    ```
+  &lt;/Step&gt;
+&lt;/Steps&gt;
+
+## 5. Analyze performance
+
+At the end of the run, VSB prints an operation summary including the requests per second achieved and latencies at different percentiles. Here's an example output:
+
+```shell Terminal theme={null}
+2025-12-23T00:34:37 INFO     Completed Run phase, took 9940.14s
+
+                      Operation Summary
+
+  Operation  Requests  Failures  Requests/sec  Failures/sec
+ ───────────────────────────────────────────────────────────
+  Search        99000     0(0%)            10           0.0
+
+                                                    Metrics Summary
+
+  Operation  Metric         Min  0.1%    1%    5%   10%   25%   50%   75%   90%   95%   99%  99.9%  99.99%   Max  Mean
+ ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Search     Latency (ms)    23    25    25    26    27    27    29    34    44    81   350    430    1300  4602    43
+</code></pre>
+<p>Confirm that the requests per second achieved is around 10 QPS and the p90 latency is less than 100ms.</p>
+<p>To see more detailed statistics, you can analyze the <code>stats.json</code> file identified in the output.</p>
+<h2 id="6-check-costs">6. Check costs</h2>
+<p>You can check the costs for the import, queries, and storage in the Pinecone console at <a href="https://app.pinecone.io/organizations/-/settings/usage">Settings &gt; Usage</a>. Cost data is delayed up to three days, but once it's available, compare the actual costs to the estimated costs below.</p>
+<p><Note>For the latest pricing details, see <a href="https://www.pinecone.io/pricing">Pricing</a>.</Note></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cost type</th>
+<th style="text-align: left;">Amount</th>
+<th style="text-align: left;">Pricing</th>
+<th style="text-align: left;">Estimated cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Import</td>
+<td style="text-align: left;">48.8 GB</td>
+<td style="text-align: left;">\$0.25/GB</td>
+<td style="text-align: left;">\$12.20</td>
+</tr>
+<tr>
+<td style="text-align: left;">Queries</td>
+<td style="text-align: left;">100,000 queries</td>
+<td style="text-align: left;">\$16 per 1M read units</td>
+<td style="text-align: left;">\$78.08</td>
+</tr>
+<tr>
+<td style="text-align: left;">Storage</td>
+<td style="text-align: left;">4 hours</td>
+<td style="text-align: left;">\$0.33/GB/month</td>
+<td style="text-align: left;">\$0.09</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>\$90.37</strong></td>
+</tr>
+</tbody>
+</table>
+<p><Note>Standard and Enterprise organizations receive a <strong>one-time 1 TB bulk import credit</strong>, valid through July 31, 2026, so on those plans the import portion of this example would be \$0 and the total would be \$78.17. The figures above assume the standard overage rate.</Note></p>
+<p><Steps>
+  <Step title="Import costs">
+    The current price for import is \$0.25/GB. The dataset size for this test is 48.8 GB, so the import cost should be \$12.20.
+  </Step></p>
+<p><Step title="Query costs">
+    A query uses 1 <a href="/guides/manage-cost/understanding-cost#read-units">read unit (RU)</a> for every 1 GB of namespace size. The current price for queries in the <code>us-east-1</code> region of AWS is \$16 per 1 million read units (pricing varies by region).</p>
+<pre><code>This test ran 100,000 queries against a namespace size of 48.8 GB. Each query uses 48.8 RUs (1 RU per GB), so the total is 4,880,000 RUs. At \$16 per 1 million RUs, the cost is (4,880,000 / 1,000,000) × \$16 = \$78.08.
+</code></pre>
+<p></Step></p>
+<p><Step title="Storage costs">
+    The current price for storage is \$0.33 per GB per month. The dataset size for this test is 48.8 GB. Assuming a total storage time of 4 hours (including import, benchmark runtime, and cleanup), the storage cost is: \$0.33/GB/month * 48.8 GB / 730 hours * 4 hours = \$0.09.
+  </Step></p>
+<p><Step title="Total costs">
+    The total cost for the test is the sum of the import cost, query cost, and storage cost: \$12.20 + \$78.08 + \$0.09 = \$90.37.
+  </Step>
+</Steps></p>
+<h2 id="7-clean-up">7. Clean up</h2>
+<p>When you no longer need your test index, <a href="/guides/manage-data/manage-indexes#delete-an-index">delete it</a> to avoid incurring unnecessary costs.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
