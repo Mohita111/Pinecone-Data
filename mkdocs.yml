@@ -1,12 +1,12 @@
-site_name: Amazon and Pinecone Documentation
+site_name: Pinecone Documentation
 
 nav:
   - Home: index.md
   - TestScale: 01-Test Scale.md
   - Concepts: 02-Concepts.md
   - Architecture: 03-Architecture.md
-  - Create Index: 04-Create anIndex.md 
-  - Data Modelling: data-modelling.mdc
+  - Create Index: 04-Create Index.md 
+  - Data Modelling: 05-Data Modelling.md
 
 theme:
   name: material
