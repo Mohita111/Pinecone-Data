@@ -1,8 +1,11 @@
 > ## Documentation Index
 > Fetch the complete documentation index at: https://docs.pinecone.io/llms.txt
 > Use this file to discover all available pages before exploring further.
+>
+> Hello
+> Hello
 
-# Create an index
+# Create an index File
 
 > Create indexes for full-text, semantic, lexical, and hybrid search.
 
