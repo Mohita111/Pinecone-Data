@@ -5,6 +5,7 @@ nav:
   - TestScale: 01-Test Scale.md
   - Concepts: 02-Concepts.md
   - Architecture: 03-Architecture.md
+  - Create Index: 04-Create anIndex.md 
 
 theme:
   name: material
