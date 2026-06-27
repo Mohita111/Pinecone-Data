@@ -6,6 +6,7 @@ nav:
   - Concepts: 02-Concepts.md
   - Architecture: 03-Architecture.md
   - Create Index: 04-Create anIndex.md 
+  - Data Modelling: data-modelling.mdc
 
 theme:
   name: material
