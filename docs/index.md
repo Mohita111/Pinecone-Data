@@ -13,5 +13,6 @@ my-docs-project/
     ├── Architecture.md
     ├── Concepts.md
     └── Test Scale.md
-       └── Create an Index.md
+          └──Create an Index.md
+    └── Test Scale.md
 
