@@ -6,13 +6,21 @@ Welcome to the internal documentation workspace.
 Use the sidebar navigation to explore the systems architecture, review fundamental concepts, and run performance benchmarks at scale.
 my-docs-project/
 
+# Pinecone Index Engineering Docs
 
-├── mkdocs.yml          # Your configuration file (Create this in the root)
-└── docs/               # Move ALL your markdown files inside this folder
-    ├── index.md        # The main landing homepage (Create this new file)
-    ├── Architecture.md
-    ├── Concepts.md
-    └── Test Scale.md
-          └──Create an Index.md
-    └── Test Scale.md
+Welcome to the internal documentation workspace. Use the sidebar navigation to explore systems architecture, review fundamental concepts, and run performance benchmarks at scale.
+
+## Repository Directory Layout
+
+```text
+Pinecone-Data/
+├── mkdocs.yml                  # Global configuration & site navigation menu
+├── requirements.txt            # Python environment dependencies
+└── docs/                       # Raw technical documentation source files
+    ├── index.md                # This landing homepage
+    ├── 01-Test Scale.md        # Performance benchmarking at scale
+    ├── 02-Concepts.md          # Fundamental core concepts
+    ├── 03-Architecture.md      # Systems architecture blueprints
+    ├── 04-Create Index.md      # Vector index setup tutorials
+    └── 05-Data Modelling.md    # Semantic data layout engineering
 
