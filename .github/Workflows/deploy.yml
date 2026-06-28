@@ -25,13 +25,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material
 
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Compile and Deploy to GitHub Pages
         run: |
           mkdocs gh-deploy --force
         env:
           GITHUB_TOKEN: ${{ github.token }}
-
-          - name: Install MkDocs Dependencies
   run: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
